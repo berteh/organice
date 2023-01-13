@@ -277,14 +277,16 @@ class Header extends PureComponent {
     const titleLine = header.get('titleLine');
     const todoKeyword = titleLine.get('todoKeyword');
     const tags = titleLine.get('tags');
+    const lvl = header.get('nestingLevel');
     const title = titleLine.get('rawTitle').trim();
     const subject = todoKeyword ? `${todoKeyword} ${title}` : title;
-    const body = `
+    const body = `#${lvl} ${title}\n
 ${tags.isEmpty() ? '' : `Tags: ${tags.join(' ')}\n`}
 ${header.get('rawDescription')}`;
     //const titleParts = titleLine.get('title'); // List of parsed tokens in title
     //const properties = header.get('propertyListItem'); //.get(0) .get('property') or .get('value')
     //const planningItems = header.get('planningItems'); //.get(0) .get('type') [DEADLINE|SCHEDULED] or .get('timestamp')
+    //
     const mailtoURI = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
       body
     )}`;
