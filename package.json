@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "private": true,
   "engines": {
-    "node": "^18.x"
+    "node": "^14.x"
   },
   "dependencies": {
     "@bity/oauth2-auth-code-pkce": "^2.13.0",
