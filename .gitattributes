@@ -3,3 +3,6 @@
 
 # Declare files that will always have LF line endings on checkout.
 *.org text eol=lf
+
+# Use bd merge for beads JSONL files
+.beads/issues.jsonl merge=beads
